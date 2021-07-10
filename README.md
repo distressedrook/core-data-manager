@@ -16,7 +16,8 @@ The technology that we went to was Core Data and with the given requirements in 
 ### A note on Core Data
 
 Core Data is not a relational database system. The framework exposes an object graph,  abstracting the underlying persistence mechanism (which could be relational or otherwise), the implementation of which is immaterial to us. iOS provides different types of persistent store types. Here is a good documentation on this.
-Design
+
+### Design
 
 While it would make sense to have a Data Access Layer in other technologies, porting this pattern from one context to other where it doesn’t make sense is bad. A DAL consolidates all the queries in one place; on the other hand, a better design would be to put the queries appropriate to a particular object on that class. And then leveraging polymorphism at both the instance level and the class level of the objects, you can expose relevant retrievals. This type of design keeps your code clean and flexible.
 
