@@ -35,6 +35,7 @@ A second is a lot from a user’s perspective. If we could still optimise this, 
  
 A better solution would be to maintain three contexts. A child context will run in the background, doing updations, a parent context will be responsible for showing data to the UI which will be running on the main thread, and a writer context will save to the disk in the background. Since writing to the store is done in background, that one second lag is gone.
 The Writer context will maintain the persistent storage. The Main context will be the child of the Writer. With that, we were able to make the UI very smooth. The user will not find the UI laggy.
-Conclusion
+
+### Conclusion
 
 Before we curse and complain about a faulty server side implementation, we should be optimistic about what we could do so that all such faults are hidden to the user making his experience fantastic through little optimisations and careful design. This will also enhance our knowledge about the framework and satisfy you with the feeling of having solved a very good problem.
